@@ -15,6 +15,7 @@ A Flask-based web application that uses a generative AI model to provide a chatb
 - **Principle:** The design leverages the "Dopamine Design" principle, which suggests that a visually appealing and user-friendly interface can enhance dopamine levels in the brain, creating a sense of pleasure and well-being.
 - **Mood Analysis:** Sentiment analysis of the user's messages using NLTK's VADER sentiment analyzer.
 - **Chat History:** Stores chat history and mood data in Firebase Firestore.
+- **Universal Chat Recognition:** The chatbot can handle and respond to all types of conversations, recognizing a wide range of emotions from user inputs. Utilizing the Gemini API, it accurately detects emotional nuances and provides appropriate responses. This capability helps the chatbot to cater to various user needs, whether it's for casual conversation, stress relief, or emotional support.
 - **Interactive Graph:** Displays mood analysis using matplotlib.
 - **Login and Logout:** Simple login with email and secure session management.
 
