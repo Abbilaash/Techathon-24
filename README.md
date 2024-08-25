@@ -5,11 +5,9 @@ A Flask-based web application that uses a generative AI model to provide a chatb
 ## Table of Contents
 
 1. [Features](#features)
-2. [Prerequisites](#prerequisites)
-3. [Installation](#installation)
-4. [Configuration](#configuration)
-5. [Usage](#usage)
-6. [Screenshots](#screenshots)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Screenshots](#screenshots)
 
 ## Features
 
