@@ -9,6 +9,7 @@ A Flask-based web application that uses a generative AI model to provide a chatb
 3. [Installation](#installation)
 4. [Configuration](#configuration)
 5. [Usage](#usage)
+6. [Screenshots](#screenshots)
 
 ## Features
 
@@ -61,3 +62,13 @@ Before running this application, ensure you have the following installed:
 
     Open your web browser and go to `http://127.0.0.1:5000`.
    The default email is 'abbilaashat@gmail.com' and password is 'abbi123'
+
+## Screenshots
+![image](https://github.com/user-attachments/assets/d705e094-53fe-475c-9409-fe9bfedaa93f)
+![image](https://github.com/user-attachments/assets/222a37c3-6098-4982-853a-bb74cddea7fa)
+![image](https://github.com/user-attachments/assets/4c1ab372-f05a-4be6-ab87-90ca312a8907)
+![image](https://github.com/user-attachments/assets/e36df796-403e-4d3d-bb5b-1555afb157d5)
+
+
+
+
