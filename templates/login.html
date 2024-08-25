@@ -1,24 +1,216 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Login</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container">
-    <h2 class="mt-5">Login</h2>
-    <form method="POST" action="/login">
-        <div class="form-group">
-            <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email" name="email" required>
+<html lang="en">
+    <style>
+        .frame-child,
+        .frame-item {
+            position: absolute;
+            top: -139px;
+            left: -75px;
+            width: 743px;
+            height: 810px;
+        }
+        .frame-item {
+            width: 680px;
+            height: 743.5px;
+            z-index: 1;
+        }
+        .vector-parent {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 668px;
+            height: 671px;
+        }
+        .chat-botamico-icon {
+            position: absolute;
+            top: 266px;
+            left: 117px;
+            width: 620px;
+            height: 627px;
+            z-index: 2;
+        }
+        .frame-parent {
+            height: 893px;
+            width: 737px;
+            position: relative;
+            min-width: 737px;
+            max-width: 100%;
+        }
+        .login1 {
+            margin: 0;
+            width: 286px;
+            position: relative;
+            font-size: 42px;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            color: var(--color-firebrick);
+            text-align: center;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+        .login-wrapper {
+            align-self: stretch;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 0 1px var(--padding-lg) 0;
+        }
+        .email {
+            flex: 1;
+            position: relative;
+            font-size: var(--font-size-xl);
+            font-family: 'Inter', sans-serif;
+            color: var(--color-firebrick);
+            text-align: left;
+        }
+        /* Styling for the input fields */
+        .input-field {
+            width: 230%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 30px;
+            box-sizing: border-box;
+        }
+        .password {
+            flex: 1;
+            position: relative;
+            font-size: var(--font-size-xl);
+            font-family: 'Inter', sans-serif;
+            color: var(--color-firebrick);
+            text-align: left;
+        }
+        .credentials {
+            align-self: stretch;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 15px;
+        }
+        .login2 {
+            flex: 1;
+            position: relative;
+            font-size: var(--font-size-xl);
+            font-family: 'Inter', sans-serif;
+            color: var(--color-white);
+            text-align: center;
+        }
+        .component-3 {
+            cursor: pointer;
+            border: 0;
+            padding: 17px 44px;
+            background-color: #f96d00;
+            width: 50%;
+            max-width: 273px;
+            border-radius: 30px;
+            overflow: hidden;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease;
+        }
+        .component-3:hover {
+            background-color: #e05400;
+        }
+        .component-3-wrapper,
+        .frame-group {
+            align-self: stretch;
+            align-items: flex-start;
+        }
+        .component-3-wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .frame-group {
+            margin: 0;
+            height: 543px;
+            border-radius: 12px;
+            background-color: #fff1e0;
+            overflow: hidden;
+            flex-shrink: 0;
+            flex-direction: column;
+            padding: 45px 66px 65px 67px;
+            box-sizing: border-box;
+            gap: 37px;
+        }
+        .frame-group,
+        .login,
+        .login-inner {
+            display: flex;
+            justify-content: flex-start;
+        }
+        .login-inner {
+            height: 672px;
+            width: 608px;
+            flex-direction: column;
+            align-items: flex-start;
+            min-width: 608px;
+            max-width: 100%;
+        }
+        .login {
+            width: 100%;
+            position: relative;
+            background-color: var(--color-white);
+            overflow: hidden;
+            flex-direction: row;
+            align-items: flex-end;
+            padding: 0 0 89px;
+            box-sizing: border-box;
+            gap: 63px;
+            line-height: normal;
+            letter-spacing: normal;
+        }
+    </style>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+    </head>
+    <body>
+        <div class="login">
+            <div class="frame-parent">
+                <div class="vector-parent">
+                    <img class="frame-child" alt="" src="{{ url_for('static', filename='images/ellipse-1.svg') }}" />
+                    <img class="frame-item" alt="" src="{{ url_for('static', filename='images/ellipse-2.svg') }}" />
+                </div>
+                <img
+                    class="chat-botamico-icon"
+                    loading="lazy"
+                    alt=""
+                    src="{{ url_for('static', filename='images/amico.svg') }}"
+                />
+            </div>
+            <div class="login-inner">
+                <form class="frame-group" action="/login" method="POST">
+                    <div class="login-wrapper">
+                        <h1 class="login1">Login to Dr.Py</h1>
+                    </div>
+                    <div class="credentials">
+                        <div class="input-fields">
+                            <b class="email">Email</b>
+                            <br>
+                            <input type="email" name="email" class="input-field" placeholder="Enter your email" required>
+                        </div>
+                        <div class="input-fields">
+                            <b class="password">Password</b>
+                            <br>
+                            <input type="password" name="password" class="input-field" placeholder="Enter your password" required>
+                        </div>
+                    </div>
+                    <div class="component-3-wrapper">
+                        <button type="submit" class="component-3">
+                            <b class="login2">LOGIN</b>
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" name="password" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Login</button>
-    </form>
-    <p class="mt-3">Don't have an account? <a href="/signup">Sign up here</a></p>
-</div>
-</body>
+    </body>
 </html>

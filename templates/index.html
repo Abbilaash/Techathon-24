@@ -1,6 +1,125 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+    <style>
+        /* Styles for the chat application */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFF1E0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .chat-container {
+            width: 80%;
+            max-width: 600px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 20px;
+            background-color: #FFF1E0;
+            border-color: #FF6E00;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .chat-history {
+            max-height: 400px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #FFF1E0;
+        }
+        .message {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 10px;
+            max-width: 60%;
+        }
+        .message.user {
+            background-color: #FFD3B1;
+            margin-left: auto;
+            text-align: right;
+        }
+        .message.bot {
+            background-color: #FF984A;
+            text-align: left;
+        }
+        .input-container {
+            display: flex;
+            margin-top: 10px;
+            background-color: #FFF1E0;  
+        }
+        .input-container input[type="text"] {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .input-container button {
+            padding: 10px;
+            background-color: #FF6E00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .chart-container {
+            width: 70%;
+            margin-top: 20px;
+        }
+        .logout-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
 
-{% block content %}
-    <h2>Home Page</h2>
-    <p>This is the home page of the Basic Flask App.</p>
-{% endblock %}
+        .logout-button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <img class="frame-child" alt="" src="{{ url_for('static', filename='images/pana.svg') }}" />
+    <div class="chat-container">
+        <div class="header">
+            Hello, {{ username }}
+        </div>
+        <div class="chat-history">
+            {% for message in messages %}
+                <div class="message {{ message.role }}">
+                    {{ message.text }}
+                </div>
+            {% endfor %}
+        </div>
+        <form action="/" method="post" class="input-container">
+            <input type="text" name="message" placeholder="Type your message here..." required>
+            <button type="submit">Send</button>
+        </form>
+        {% if graph_url %}
+            <div class="chart-container">
+                <img src="data:image/png;base64,{{ graph_url }}" alt="Mood Analytics Graph">
+            </div>
+        {% endif %}
+    </div>
+    <form action="/logout" method="post" style="position: fixed; bottom: 20px; right: 20px;">
+        <button type="submit" class="logout-button">Logout</button>
+    </form>
+</body>
+</html>
