@@ -12,6 +12,7 @@ A Flask-based web application that uses a generative AI model to provide a chatb
 ## Features
 
 - **Chatbot Interaction:** Chat with the AI-powered bot for stress relief.
+- **Principle:** The design leverages the "Dopamine Design" principle, which suggests that a visually appealing and user-friendly interface can enhance dopamine levels in the brain, creating a sense of pleasure and well-being.
 - **Mood Analysis:** Sentiment analysis of the user's messages using NLTK's VADER sentiment analyzer.
 - **Chat History:** Stores chat history and mood data in Firebase Firestore.
 - **Interactive Graph:** Displays mood analysis using matplotlib.
