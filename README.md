@@ -19,15 +19,6 @@ A Flask-based web application that uses a generative AI model to provide a chatb
 - **Interactive Graph:** Displays mood analysis using matplotlib.
 - **Login and Logout:** Simple login with email and secure session management.
 
-## Prerequisites
-
-Before running this application, ensure you have the following installed:
-
-- Python 3.x
-- pip (Python package manager)
-- Firebase account with Firestore enabled
-- Google Cloud API Key for Generative AI model (Gemini API)
-
 ## Installation
 
 1. **Clone the repository:**
